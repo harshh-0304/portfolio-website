@@ -1,11 +1,23 @@
-// You can add JavaScript functionality here in the future.
-// For example, a function to handle a mobile navigation menu,
-// form validation, or dynamic project loading.
+// This ensures the script runs after the entire page has loaded
+document.addEventListener('DOMContentLoaded', () => {
 
-console.log("Portfolio website script loaded!");
+  // Create a new Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    // Loop over the entries
+    entries.forEach(entry => {
+      // If the element is visible
+      if (entry.isIntersecting) {
+        // Add the 'visible' class
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1 // Trigger when 10% of the element is visible
+  });
 
-// Example of a future function:
-// function handleMobileMenu() {
-//   const nav = document.querySelector('.nav-links');
-//   nav.classList.toggle('active');
-// }
+  // Get all the elements you want to reveal on scroll
+  const hiddenElements = document.querySelectorAll('.reveal-on-scroll');
+  
+  // Loop over the elements and add an observer to each of them
+  hiddenElements.forEach((el) => observer.observe(el));
+});

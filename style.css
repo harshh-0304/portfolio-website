@@ -177,6 +177,9 @@ section:nth-child(even) {
 
 .skills-category {
     margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skills-category h3 {
@@ -359,4 +362,21 @@ footer {
     .skills-wrapper {
         grid-template-columns: 1fr; /* Stacks the categories into a single column */
     }
+}
+
+/* --- Scroll-Reveal Animation --- */
+
+/* The initial state of the elements to be animated */
+/* They start off invisible and slightly moved down */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* The state of the elements once they become visible */
+/* They fade in and move up to their original position */
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
