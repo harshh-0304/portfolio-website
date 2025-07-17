@@ -1,0 +1,362 @@
+/* ===================================================================
+   MAIN STYLESHEET
+   - General & Typography
+   - Dark Theme Colors
+   - Header & Navigation
+   - Main Content & Sections
+   - Hero Section
+   - Buttons
+   - Specific Sections (Skills, Projects, Interests, Contact)
+   - Footer
+   - Responsive Design
+=================================================================== */
+
+/* --- General & Typography --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    /* --- Dark Theme Colors --- */
+    background-color: #121212; /* Very dark gray (almost black) */
+    color: #e0e0e0; /* Light gray text for readability */
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #00aaff; /* Blue accent color for category titles */
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: rgba(26, 26, 26, 0.9); /* Slightly transparent dark background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+nav .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    margin-left: 25px;
+}
+
+nav .nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #00aaff;
+}
+
+/* --- Main Content & Sections --- */
+main {
+    padding-top: 75px; /* Offset for the fixed header */
+}
+
+section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #222;
+}
+/* Remove border from the last section before the footer */
+main section:last-of-type {
+    border-bottom: none;
+}
+
+section:nth-child(even) {
+    background-color: #181818; /* Alternate dark section color */
+}
+
+/* --- Hero Section --- */
+#hero {
+    /* You can change this background image to one you prefer! */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    border-bottom: none;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #ccc;
+}
+
+/* --- Buttons --- */
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #00aaff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #0088cc;
+    transform: translateY(-2px);
+}
+
+/* --- Updated Skills/Tech Stack Section --- */
+/* --- Updated Skills/Tech Stack Section --- */
+.skills-wrapper {
+    display: grid;
+    /* Creates three flexible columns of equal width on larger screens */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; /* Defines the space between the columns */
+    align-items: start; /* Aligns the top of each category card */
+}
+
+/* ... keep the rest of the styles for .skills-category, .skills-grid, etc., as they are ... */
+
+.skills-category {
+    margin-bottom: 3rem;
+}
+
+.skills-category h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    border-bottom: 2px solid #00aaff;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.1);
+}
+
+.skill-badge i {
+    font-size: 2rem;
+    color: #e0e0e0; /* Icon color */
+}
+
+
+/* --- Projects Section --- */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 170, 255, 0.15);
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    flex-grow: 1; /* Ensures cards in a row have the same height */
+    margin-bottom: 1rem;
+    color: #bbb;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #00aaff;
+    font-weight: bold;
+}
+
+/* --- Interests Section --- */
+#interests {
+    text-align: center;
+}
+
+.interests-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.interests-list li {
+    background: #1e1e1e;
+    padding: 12px 18px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border-left: 5px solid #00aaff;
+    transition: background-color 0.3s ease;
+}
+
+.interests-list li:hover {
+    background-color: #2a2a2a;
+}
+
+/* --- Contact Section --- */
+#contact {
+    text-align: center;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #1a1a1a;
+    color: #aaa;
+}
+/* 
+--- Responsive Design ---
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+    nav .logo {
+        margin-bottom: 1rem;
+    }
+    nav .nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    nav .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    main {
+        padding-top: 130px; /* Adjust for taller mobile header */
+    /* }
+/* } */ 
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+    nav .logo {
+        margin-bottom: 1rem;
+    }
+    nav .nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    nav .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    main {
+        padding-top: 130px; /* Adjust for taller mobile header */
+    }
+
+    /* ADD THIS RULE FOR THE SKILLS WRAPPER */
+    .skills-wrapper {
+        grid-template-columns: 1fr; /* Stacks the categories into a single column */
+    }
+}
